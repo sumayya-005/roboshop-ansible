@@ -2,3 +2,8 @@
   ansible.builtin.yum:
     name: nginx
     state: installed
+
+- name: Starting nginx
+  ansible.builtin.yum:
+    state: started
+    name: nginx
