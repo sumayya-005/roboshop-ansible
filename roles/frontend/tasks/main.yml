@@ -17,7 +17,7 @@
 - name: Downloading Ngnix Web Content & Extract it
   ansible.builtin.unarchive:
     src: https://github.com/roboshop-devops-project/frontend/archive/main.zip
-    dest: /tmp/frontend.zip
+    dest: /tmp
     remote_src: yes
 
 
