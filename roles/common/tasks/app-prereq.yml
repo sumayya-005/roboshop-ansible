@@ -18,3 +18,4 @@
           src: /tmp/catalogue-main/
           dest: /home/roboshop/{{COMPONENT}}/
           remote_src: yes
+  become_user: roboshop
