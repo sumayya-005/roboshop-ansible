@@ -1,0 +1,29 @@
+- name: Setup MongoDB Repo
+  ansible.builtin.copy:
+    src: mongo.repo
+    dest: /etc/yum.repo.d/mongo.repo
+
+- name: Install MongoDB package
+  ansible.builtin.systemd:
+    state: restarted
+    name: nginx
+    enabled: yes
+
+- name: Update Mongodb Listen address
+  ansible.builtin.replace:
+    path: /etc/mongod.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+- name: Start Mongodb service
+  ansible.builtin.systemd:
+    name: mongod
+    state: restarted
+    enabled: yes
+
+- name: Downloading schema files
+  ansible.builtin.unarchive:
+    src: https://github.com/roboshop-devops-project/mongodb/archive/main.zip
+    dest: /tmp
+    remote_src: yes
+
