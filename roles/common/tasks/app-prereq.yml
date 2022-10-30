@@ -1,0 +1,19 @@
+- name: Add RoboShop Application User
+  ansible.builtin.user:
+    name: roboshop
+
+- name: Clean UP old App Content
+  ansible.builtin.file:
+    path: /home/roboshop/{{COMPONENT}}
+    state: absent
+
+- name: Downloading Application content
+  ansible.builtin.unarchive:
+    src: https://github.com/roboshop-devops-project/{{COMPONENT}}/archive/main.zip
+    dest: /tmp
+    remote_src: yes
+
+- name: Copy Extracted Content
+  ansible.builtin.copy:
+          src: /home/roboshop/{{COMPONENT}}/
+          remote_src: yes
