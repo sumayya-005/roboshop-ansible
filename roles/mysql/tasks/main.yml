@@ -16,3 +16,12 @@
     name: mysqld
     state: started
     enabled: yes
+
+- name: Load the file
+  ansible.builtin.slurp:
+    src: /var/log/mysql.log
+  register: out
+
+- name: Print Out
+  debug:
+    msg: "{{out | b64code}}"
