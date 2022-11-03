@@ -24,4 +24,4 @@
 
 - name: Print Out
   debug:
-    msg: "{{out | b64code}}"
+    msg: "{{out['content'] | b64decode}}"
