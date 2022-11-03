@@ -1,5 +1,5 @@
 [Unit]
-Description = Catalogue Service
+Description = Cart Service
 [Service]
 User=roboshop
 Environment=REDIS_host=redis.roboshop.internal
