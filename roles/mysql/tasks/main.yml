@@ -64,9 +64,9 @@
   ignore_errors: yes
   register: plugins_status
 
-- name: print
-  debug:
-    msg: "{{plugin_status | regex_findall('validate_password') | length}}"
+#- name: print
+#  debug:
+#    msg: "{{plugin_status | regex_findall('validate_password') | length}}"
 
 - name: Uninstall Password Validate Plugin
   community.mysql.mysql_query:
