@@ -58,7 +58,7 @@
 
 - name: Check MySQL Password Validate Plugin
   community.mysql.mysql_query:
-#    query: 'show plugins'
+    query: 'show plugins'
     login_user: root
     login_password: "{{ROBOSHOP_MYSQL_PASSWORD}}"
     filter: 'show plugins'
