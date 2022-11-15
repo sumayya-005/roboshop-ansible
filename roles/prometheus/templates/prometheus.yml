@@ -1,0 +1,17 @@
+# my global config
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+rule_files:
+
+scrape_configs:
+  - job_name: "prometheus"
+    static_configs:
+      - targets: ["localhost:9090"]
+  - job_name: "test-node"
+  - static_configs:
+      - targets: ["44.193.208.16:9100"]
