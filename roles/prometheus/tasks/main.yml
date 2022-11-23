@@ -10,7 +10,7 @@
 #    - alert-rules.yml
 
 
-- name : Restart Prometheus
+- name: Restart Prometheus
   ansible.builtin.systemd:
-    name: Prometheus
+    name: prometheus
     state: restarted
