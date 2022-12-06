@@ -2,4 +2,4 @@
   ansible.builtin.shell: set-hostname {{COMPONENT}}
 
 - name: Install Prometheus Node Exporter
-  ansible.buitin.shell: labauto prometheus-node-exporter
+  ansible.builtin.shell: labauto prometheus-node-exporter
