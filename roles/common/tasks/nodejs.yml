@@ -17,7 +17,7 @@
 - name: Download the DocumentDB pem file
   get_url:
     url: https://s3.amazonaws.com/rds-downloads/rds-combined-ca-bundle.pem
-    dest: /home/roboshop/catalogue/rds-combined-ca-bundle.pe
+    dest: /home/roboshop/catalogue/rds-combined-ca-bundle.pem
 
 - name: Import SystemD tasks
   ansible.builtin.import_tasks: systemd.yml
