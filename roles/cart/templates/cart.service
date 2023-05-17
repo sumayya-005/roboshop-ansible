@@ -5,6 +5,7 @@ User=roboshop
 Environment=REDIS_HOST="{{SECRETS.ELASTICACHE_ENDPOINT}}"
 #Environment=REDIS_HOST="{{ lookup('aws_ssm', 'roboshop.dev.cart.REDIS_HOST', region='us-east-1' ) }}"
 Environment=CATALOGUE_HOST="{{ lookup('aws_ssm', 'roboshop.dev.cart.CATALOGUE_HOST', region='us-east-1' ) }}"
+Environment=CATALOGUE_PORT=80
 ExecStart=/bin/node /home/roboshop/cart/server.js
 SyslogIdentifier=cart
 
